@@ -1,10 +1,15 @@
+import sys
+import os
+
+sys.path.append(os.path.join(os.path.dirname(__file__), "../scripts"))
+
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 
-from scripts.extract import extract_weather
-from scripts.transform import transform_weather
-from scripts.load import load_weather
+from extract import extract_weather
+from transform import transform_weather
+from load import load_weather
 
 default_args = {
     'owner': 'airflow',
