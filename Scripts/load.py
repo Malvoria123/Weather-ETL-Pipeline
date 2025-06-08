@@ -6,10 +6,11 @@ load_dotenv()
 
 def load_weather(data):
     conn = psycopg2.connect(
-        host="localhost",
-        dbname="weather_data",
-        user="postgres",
-        password=os.getenv("DB_PASS")
+        host="postgres",
+        port=5432,
+        database=os.getenv("POSTGRES_DB"),
+        user=os.getenv("POSTGRES_USER"),
+        password=os.getenv("PASSWORD")
     )
 
     cursor = conn.cursor()
