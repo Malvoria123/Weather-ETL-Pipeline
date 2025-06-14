@@ -20,7 +20,7 @@ default_args = {
 def run_etl():
     raw = extract_weather()
     transformed = transform_weather(raw)
-    load_weather(transformed)
+    load_weather([transformed])
 
 with DAG(
     dag_id='weather_etl_pipeline',
