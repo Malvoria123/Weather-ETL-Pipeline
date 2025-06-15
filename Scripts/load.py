@@ -15,7 +15,7 @@ def load_weather(data):
 
     cursor = conn.cursor()
 
-    # ✅ Create table if not exists
+    # Create table if not exists
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS weather_logs (
             city TEXT,
@@ -38,7 +38,7 @@ def load_weather(data):
         );
     """)
 
-    # ✅ Prepare insert query
+    # Prepare insert query
     insert_query = """
         INSERT INTO weather_logs (
             city, temperature, feels_like, temp_min, temp_max, humidity,

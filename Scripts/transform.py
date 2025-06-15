@@ -3,7 +3,7 @@ from datetime import datetime
 def transform_weather(data):
     main = data["main"]
     wind = data.get("wind", {})
-    sys = data.get("sys", {})
+    system_info = data.get("sys", {})
     weather = data["weather"][0]
     clouds = data.get("clouds", {}).get("all")
     visibility = data.get("visibility")
@@ -23,7 +23,7 @@ def transform_weather(data):
         "weather_main": weather["main"],
         "weather_description": weather["description"],
         "weather_icon": weather["icon"],
-        "sunrise": datetime.fromtimestamp(sys["sunrise"]),
-        "sunset": datetime.fromtimestamp(sys["sunset"]),
+        "sunrise": datetime.fromtimestamp(system_info["sunrise"]),
+        "sunset": datetime.fromtimestamp(system_info["sunset"]),
         "timestamp": datetime.now()
     }
