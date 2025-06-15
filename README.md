@@ -1,6 +1,8 @@
 # Weather ETL Pipeline
-![Screenshot_pgadmin4](assets/screenshot_pgadmin4_projekindividu2.png)\
 🚀 This is a personal project I built by myself. This project pulls weather data from the **OpenWeatherMap API**, processes it using ETL (Extract, Transform, and Load), and stores it into a **PostgreSQL database**, which I access via **pgAdmin 4**. All of those processes are completely **automated** to run once every hour (As long as the server is running) via the use of **Apache Airflow** and run inside a **Docker** container.
+
+![Screenshot_airflow](assets/screenshot_airflow_projekindividu2.png)\
+![Screenshot_pgadmin4](assets/screenshot_pgadmin4_projekindividu2.png)
 
 🔄 **Automated Data Pipeline:**\
 **1. ☁️ Weather API**\
@@ -55,3 +57,10 @@ These two files contain the instructions to use the required Airflow environment
 1. I could have transformed the time-related data to use the local time (WIB) instead of UTC during the transform process. I certainly will prioritize this.
 2. I could make data visualizations to visualize all the collected data. Things like weather trend and patterns can easily be spotted.
 3. This project can include more cities and be more frequent to adapt to different industrial scenarios.
+
+📬 Feedback or Contributions\
+Feel free to contact me to discuss potential collaborations, provide feedback, report issues, or just say hello! I'm open to new ideas and opportunities. You can reach me via LinkedIn at https://www.linkedin.com/in/jason-pangestu-9a9a44248.
+
+If you found this project helpful or interesting, don't forget to give it a star ⭐️ and share it with others who might benefit!
+
+🚀 Thank you for your interest and support!
