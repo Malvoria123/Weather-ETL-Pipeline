@@ -32,9 +32,9 @@ def load_weather(data):
             weather_main TEXT,
             weather_description TEXT,
             weather_icon TEXT,
-            sunrise TIMESTAMP,
-            sunset TIMESTAMP,
-            timestamp TIMESTAMP
+            sunrise TIMESTAMPTZ,
+            sunset TIMESTAMPTZ,
+            timestamp TIMESTAMPTZ
         );
     """)
 
