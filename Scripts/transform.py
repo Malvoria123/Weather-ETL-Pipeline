@@ -1,4 +1,5 @@
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 def transform_weather(data):
     main = data["main"]
@@ -7,6 +8,8 @@ def transform_weather(data):
     weather = data["weather"][0]
     clouds = data.get("clouds", {}).get("all")
     visibility = data.get("visibility")
+
+    WIB = ZoneInfo("Asia/Jakarta") # Using Waktu Indonesia Barat as the time region
 
     return {
         "city": data["name"],
@@ -23,7 +26,7 @@ def transform_weather(data):
         "weather_main": weather["main"],
         "weather_description": weather["description"],
         "weather_icon": weather["icon"],
-        "sunrise": datetime.fromtimestamp(system_info["sunrise"]),
-        "sunset": datetime.fromtimestamp(system_info["sunset"]),
-        "timestamp": datetime.now()
+        "sunrise": datetime.fromtimestamp(system_info["sunrise"], tz=WIB),
+        "sunset": datetime.fromtimestamp(system_info["sunset"], tz=WIB),
+        "timestamp": datetime.now(WIB)
     }
