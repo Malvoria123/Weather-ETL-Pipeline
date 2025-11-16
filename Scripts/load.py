@@ -17,7 +17,7 @@ def load_weather(data):
 
     # Create table if not exists
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS weather_logs (
+        CREATE TABLE IF NOT EXISTS weather_logs2 (
             city TEXT,
             temperature REAL,
             feels_like REAL,
@@ -40,7 +40,7 @@ def load_weather(data):
 
     # Prepare insert query
     insert_query = """
-        INSERT INTO weather_logs (
+        INSERT INTO weather_logs2 (
             city, temperature, feels_like, temp_min, temp_max, humidity,
             pressure, wind_speed, wind_deg, visibility, clouds,
             weather_main, weather_description, weather_icon,
